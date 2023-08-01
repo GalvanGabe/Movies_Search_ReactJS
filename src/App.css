@@ -1,1 +1,35 @@
+body {
+    background-image: url(https://i.pinimg.com/736x/03/ca/2a/03ca2a1090de0195348742d28d910389.jpg);
+}
 
+.icons {
+    color: #fff;
+    height: 2.5em;
+    width: 2.5em;
+}
+
+p {
+    color: #fff;
+}
+
+h2,
+h3 {
+    color: #000;
+}
+
+.styles_movies_card {
+    background-color: #ffffff10;
+    backdrop-filter: blur(12px);
+    /*-webkit-backdrop-filter: blur(12px);*/
+    border-style: double;
+    border-radius: 20%;
+}
+
+img {
+    border-style: dashed;
+    border-color: rgb(247, 247, 247);
+}
+
+.img_hover:hover {
+    transform: scale(150%);
+}
