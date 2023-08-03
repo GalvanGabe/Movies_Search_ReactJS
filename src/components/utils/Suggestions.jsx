@@ -9,6 +9,7 @@ function Suggestions(){
     const url = process.env.REACT_APP_SEARCH_URL;
     const [randomMovie, setRandomMovie] = useState({});
     const [removeLoading, setRemoveLoading] = useState(false);
+    const [movieOk, setMovieOk] = useState(false);
 
     function generateRandomId(){
 
@@ -28,6 +29,7 @@ function Suggestions(){
                 } else {
                     setRandomMovie(data)
                     setRemoveLoading(true)
+                    setMovieOk(true)
                 }
             })
             .catch(err => console.log(err))
@@ -42,15 +44,13 @@ function Suggestions(){
 
     return (
 
-        /*<>
-            <Loading/>
-        </>*/
-
         <>
-          <MovieCard obj={randomMovie}/>
-          {(!removeLoading && 
-            <Loading/>
-          )}
+            {(!removeLoading && 
+                <Loading/>
+            )}
+            {(movieOk &&
+                <MovieCard obj={randomMovie}/>
+            )}
         </>
 
     )

@@ -5,10 +5,12 @@ function Home(){
 
     return (
 
+        //<Suggestions/>
+
         <>
             <Main>
                 <h2 className="fw-bolder text-center fs-2">Suggestions</h2>
-                <Suggestions/>
+                <p>Suggestions Movies Here</p>
             </Main>
         </>
         
