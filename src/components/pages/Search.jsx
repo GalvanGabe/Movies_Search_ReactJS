@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Main from '../layout/Main';
 import MovieCard from '../movies/MovieCard';
 import Loading from '../utils/Loading';
+import ButtonContainer from '../buttons/ButtonContainer';
 
 function Search(){
 
@@ -14,15 +15,22 @@ function Search(){
     const url = process.env.REACT_APP_SEARCH_URL;
     const [movies, setMovies] = useState([]);
     const [removeLoading, setRemoveLoading] = useState(false);
+    const [moviesNumber, setMoviesNumber] = useState('');
 
-    function loadMovies(){
+    async function loadMovies(){
 
-        fetch(`${url}apikey=${apiKey}&s=${query}&page=${page}`)
+        await fetch(`${url}apikey=${apiKey}&s=${query}&page=${page}`)
         .then((res) => res.json())
         .then((data) => {
-            console.log(data, data.totalResults, page)
-            setMovies(data.Search)
-            setRemoveLoading(true)
+            if (data.Response === 'False') {
+                alert('Movie not found!')
+                return
+                // fazer uma página para filme não encontrado
+            } else {
+                setMovies(data.Search)
+                setRemoveLoading(true)
+                setMoviesNumber(data.totalResults)
+            }
         })
         .catch(err => console.log(err))
 
@@ -30,19 +38,20 @@ function Search(){
 
     useEffect(() => {
         loadMovies()
-    }, [query]);
+    }, [query, page]);
 
     return (
 
         <>
            <Main>
-                <h2 className="fw-bolder text-center fs-2">{query} Search Results</h2>
+                <h2 className="fw-bolder text-center fs-2">Search Result: {query}</h2>
                 {(!removeLoading &&
                     <Loading/>    
                 )}
                 {movies.map((movie) => {
                     return <MovieCard key={movie.imdbID} obj={movie}/>
                 })}
+                <ButtonContainer totalMovies={moviesNumber}/>
             </Main> 
         </>
         

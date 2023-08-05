@@ -21,7 +21,7 @@ function Suggestions(){
 
     function loadInfoMovieRandom(){
 
-        fetch(`${url}apikey=${apiKey}&i=${generateRandomId()}&plot=full`)
+        fetch(`${url}apikey=${apiKey}&i=${generateRandomId()}`)
             .then((res) => res.json())
             .then((data) => {
                 if (data.Response === 'False') {

@@ -6,7 +6,7 @@ import {FaPlayCircle} from 'react-icons/fa';
 function Header(){
 
     const [search, setSearch] = useState('');
-    //const [pageNumber, setPageNumber] = useState('1');
+    const [pageNumber, setPageNumber] = useState('1');
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -17,11 +17,10 @@ function Header(){
             return
         }
 
-        //${pageNumber}
-        console.log(search)
-        navigate(`/search?q=${search}&page=1`);
+        //console.log(search, pageNumber);
+        navigate(`/search?q=${search}&page=${pageNumber}`);
         setSearch('');
-        //setPageNumber('1');
+        setPageNumber('1');
         
     }
 
