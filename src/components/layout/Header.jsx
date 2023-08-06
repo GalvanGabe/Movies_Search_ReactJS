@@ -17,7 +17,6 @@ function Header(){
             return
         }
 
-        //console.log(search, pageNumber);
         navigate(`/search?q=${search}&page=${pageNumber}`);
         setSearch('');
         setPageNumber('1');

@@ -20,7 +20,6 @@ h3 {
 .styles_movies_card {
     background-color: #ffffff10;
     backdrop-filter: blur(12px);
-    /*-webkit-backdrop-filter: blur(12px);*/
     border-style: double;
     border-radius: 20%;
 }
@@ -32,4 +31,36 @@ img {
 
 .img_hover:hover {
     transform: scale(150%);
+}
+
+.query_span,
+.page_span {
+    border-bottom-style: solid;
+    border-color: #dc3545;
+    color: #495057; 
+}
+
+.query_span {
+    text-transform: capitalize;
+}
+
+.details_list {
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+hr {
+    color: #000
+}
+
+summary {
+    font-size: 1.3em;
+}
+
+summary:hover {
+    color: #dc3545;
+    transition: 0.3s;
 }

@@ -25,7 +25,7 @@ function Search(){
             if (data.Response === 'False') {
                 alert('Movie not found!')
                 return
-                // fazer uma página para filme não encontrado
+                //Make page movie not found
             } else {
                 setMovies(data.Search)
                 setRemoveLoading(true)
@@ -44,7 +44,7 @@ function Search(){
 
         <>
            <Main>
-                <h2 className="fw-bolder text-center fs-2">Search Result: {query}</h2>
+                <h2 className="fw-bolder text-center fs-2">Search result: <span className='query_span'>{query}</span> page: <span className='page_span'>nº{page}</span></h2>
                 {(!removeLoading &&
                     <Loading/>    
                 )}

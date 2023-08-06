@@ -19,9 +19,9 @@ function Suggestions(){
 
     }
 
-    function loadInfoMovieRandom(){
+    async function loadInfoMovieRandom(){
 
-        fetch(`${url}apikey=${apiKey}&i=${generateRandomId()}`)
+        await fetch(`${url}apikey=${apiKey}&i=${generateRandomId()}`)
             .then((res) => res.json())
             .then((data) => {
                 if (data.Response === 'False') {
