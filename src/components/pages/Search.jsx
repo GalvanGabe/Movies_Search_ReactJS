@@ -1,5 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Main from '../layout/Main';
 import MovieCard from '../movies/MovieCard';
@@ -8,6 +9,7 @@ import ButtonContainer from '../buttons/ButtonContainer';
 
 function Search(){
 
+    const navigate = useNavigate();
     const [searchParams] = useSearchParams();
     const query = searchParams.get('q');
     const page = searchParams.get('page');
@@ -23,9 +25,7 @@ function Search(){
         .then((res) => res.json())
         .then((data) => {
             if (data.Response === 'False') {
-                alert('Movie not found!')
-                return
-                //Make page movie not found
+                navigate(`/search/movienotfound?q=${query}`)
             } else {
                 setMovies(data.Search)
                 setRemoveLoading(true)

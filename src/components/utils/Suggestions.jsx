@@ -24,7 +24,7 @@ function Suggestions(){
         await fetch(`${url}apikey=${apiKey}&i=${generateRandomId()}`)
             .then((res) => res.json())
             .then((data) => {
-                if (data.Response === 'False') {
+                if (data.Response === 'False' || data.Genre === 'Adult') {
                     loadInfoMovieRandom()
                 } else {
                     setRandomMovie(data)
