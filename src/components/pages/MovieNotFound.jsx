@@ -1,4 +1,4 @@
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 
 import {FcIdea} from 'react-icons/fc';
 
@@ -15,7 +15,7 @@ function MovieNotFound(){
             <hr />
             <FcIdea className="icons"/>
             <h3 className="fs-3 text">Would you like<br/> some suggestions?</h3>
-            <a className="fs-4 text" href="http://localhost:3000/">Click Here!</a>
+            <Link className="fs-4 text" to="/">Click Here!</Link>
         </section>
 
     )
