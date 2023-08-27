@@ -8,6 +8,17 @@ Movies Search Page is a web search application for movies, series and episodes, 
 
 O Movies Search Page é uma aplicação web de pesquisa de filmes, séries e episódios, onde o retorno dos dados como: título, ano do lançamento, tipo e gênero, vem da OMDbAPI (Open Movie Database), além da busca que usuário fizer, a "home page" também oferece três sugestões aleatórias geradas por nosso sistema. Todo o app foi componentizado em JSX e com algumas melhorias no sistema do projeto graças ao ReactJS.
 
+## Layout mobile
+![Mobile 1](https://github.com/GalvanGabe/assets/blob/main/movie_search_img_reactjs/mobile1.png) ![Mobile 2](https://github.com/GalvanGabe/assets/blob/main/movie_search_img_reactjs/mobile2.png)
+
+## Layout web
+![Web 1](https://github.com/GalvanGabe/assets/blob/main/movie_search_img_reactjs/web1.png)
+
+![Web 2](https://github.com/GalvanGabe/assets/blob/main/movie_search_img_reactjs/web2.png)
+
+## Movie not found page
+![Web 1](https://github.com/GalvanGabe/assets/blob/main/movie_search_img_reactjs/movienotfound.png)
+
 # Resources used / Recursos utilizados
 - HTML
 - CSS
